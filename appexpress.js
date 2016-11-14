@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/checkuser', function(req, res) {
 
-	/*if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test' && req.body.ajax) {
+	if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test' && req.body.ajax) {
 		res.send('/access.html');
-	}*/
+	}
 	if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test') {
 		res.redirect('/access.html');
 	}

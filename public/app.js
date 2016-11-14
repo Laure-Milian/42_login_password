@@ -26,8 +26,9 @@ var app = {
 	},
 
 	checkUserDone: function(response) {
+		console.log(response);
 		if (response === '/access.html') {
-			window.location.href = 'http://localhost:2000' + response;
+			window.location.href = 'http://localhost:2000/access.html';
 		} else {
 			$('#message').html(response);
 		}

@@ -7,24 +7,35 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
-	<div id="message"></div>
 
-	<form class="ui form" method="post" action="/checkuser">
+	<div class="container">
 		
-		<label for="inputLogin">Login</label>
-		<input id="inputLogin" type="text" name="inputLogin">
+		<h1>Connexion</h1>
 
-		<label for="inputPassword">Password</label>
-		<input id="inputPassword" type="password" name="inputPassword">
+		<div id="message"></div>
 		
-		<button id="btnInput" class='ui teal button'>Submit</button>
-	</form>
+		<form class="ui form" method="post" action="/checkuser">
+
+			
+			<div class="field">
+				<label for="inputLogin">Login</label>
+				<input id="inputLogin" type="text" name="inputLogin">
+			</div>
+
+			<div class="field">
+				<label for="inputPassword">Password</label>
+				<input id="inputPassword" type="password" name="inputPassword">
+			</div>
+
+			<button id="btnInput" class='ui teal button'>Submit</button>
+		</form>
+
+	</div>
 
 
 
 	<script src='node_modules/jquery/dist/jquery.min.js'></script>
-	<!-- <script src='app.js'></script> -->
+	<script src='app.js'></script>
 
 </body>
 </html>
