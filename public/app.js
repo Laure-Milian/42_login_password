@@ -14,8 +14,8 @@ var app = {
 
 	checkUser: function(event) {
 		event.preventDefault();
-		var inputLogin = $('#inputPassword').val();
-		var inputPassword = $('#inputLogin').val();
+		var inputLogin = $('#inputLogin').val();
+		var inputPassword = $('#inputPassword').val();
 		$.post({
 			url: this.endpoint + '/checkuser',
 			method: 'POST',
@@ -26,9 +26,6 @@ var app = {
 	},
 
 	checkUserDone: function(response) {
-		console.log(response);
-		console.log(response.err);
-		console.log(response.message);
 		if(response.err) {
 			$('#message').html(response.message);
 		} else {
