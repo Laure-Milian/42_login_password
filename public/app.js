@@ -5,32 +5,39 @@ var app = {
 	endpoint: 'http://localhost:2000',
 
 	init: function() {
-		app.listeners();
+		this.listeners();
 	},
 
 	listeners: function() {
-		$('#submitBtn').on('click', this.checkUser.bind(this));
+		$('form').on('submit', this.checkUser.bind(this));
 	},
 
-	checkUser: function() {
-		var inputLogin = $('#inputLogin').val();
-		var inputPassword = $('#inputPassword').val();
+	checkUser: function(event) {
+		event.preventDefault();
+		var inputLogin = $('#inputPassword').val();
+		var inputPassword = $('#inputLogin').val();
 		$.post({
-			url: this.endpoint + '/checkUser',
+			url: this.endpoint + '/checkuser',
 			method: 'POST',
-			data: {inputLogin: inputLogin, inputPassword: inputPassword}
+			data: {inputLogin: inputLogin, inputPassword: inputPassword, ajax: true}
 		})
 		.done(this.checkUserDone)
 		.fail(this.checkUserFail);
 	},
 
-	checkUserDone: function() {
-		console.log('ok');
+	checkUserDone: function(response) {
+		if (response === '/access.html') {
+			window.location.href = 'http://localhost:2000' + response;
+		} else {
+			$('#message').html(response);
+		}
 	},
 
 	checkUserFail: function() {
-		console.log('nope');
+		console.log("request fail");
 	}
+	
+
 }
 
 app.init();

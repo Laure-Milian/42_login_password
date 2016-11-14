@@ -8,26 +8,23 @@
 </head>
 <body>
 	
+	<div id="message"></div>
 
-	<h1>Hey</h1>
-
-	<form class="ui form" onsubmit="return false">
-		<div class="field">
-		<label for="inputLogin">Login</label>
-			<input id="inputLogin" type="text">
-
-			<label for="inputPassword">Password</label>
-			<input id="inputPassword" type="password">
-
-		</div>
+	<form class="ui form" method="post" action="/checkuser">
 		
-		<button id='submitBtn' class='ui teal button'>Submit</button>
+		<label for="inputLogin">Login</label>
+		<input id="inputLogin" type="text" name="inputLogin">
+
+		<label for="inputPassword">Password</label>
+		<input id="inputPassword" type="password" name="inputPassword">
+		
+		<button id="btnInput" class='ui teal button'>Submit</button>
 	</form>
 
 
 
 	<script src='node_modules/jquery/dist/jquery.min.js'></script>
-	<script src='app.js'></script>
+	<!-- <script src='app.js'></script> -->
 
 </body>
 </html>
