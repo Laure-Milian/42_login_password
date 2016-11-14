@@ -1,0 +1,25 @@
+{
+  "name": "42_login_password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laure-Milian/42_login_password.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laure-Milian/42_login_password/issues"
+  },
+  "homepage": "https://github.com/Laure-Milian/42_login_password#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "semantic-ui-css": "^2.2.4"
+  }
+}
