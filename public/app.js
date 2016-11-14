@@ -27,10 +27,12 @@ var app = {
 
 	checkUserDone: function(response) {
 		console.log(response);
-		if (response === '/access.html') {
-			window.location.href = 'http://localhost:2000/access.html';
+		console.log(response.err);
+		console.log(response.message);
+		if(response.err) {
+			$('#message').html(response.message);
 		} else {
-			$('#message').html(response);
+			$('html').html(response.message);
 		}
 	},
 

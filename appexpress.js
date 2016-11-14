@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var app = express();
 
@@ -12,19 +13,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/checkuser', function(req, res) {
 
 	if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test' && req.body.ajax) {
-		res.send('/access.html');
+		fs.readFile('access.html', 'utf8', function(err, data) {
+			if (err) {
+				return console.log(err);
+			}
+			res.send({err: false, message: data});
+		});
 	}
-	if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test') {
+	else if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test') {
 		res.redirect('/access.html');
 	}
 	else if (req.body.inputLogin === 'test') {
-		res.send('Bad login');
+		res.send({err: true, message:'Bad login'});
 	}
 	else if (req.body.inputPassword === 'test') {
-		res.send('Bad password');
+		res.send({err: true, message:'Bad password'});
 	}
 	else {
-		res.send('Bad password & bad login');
+		res.send({err: true, message:'Bad password & bad login'});
 	}
 })
 
