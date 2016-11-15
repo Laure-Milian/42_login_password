@@ -15,8 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/checkuser', function(req, res) {
 
 	bcrypt.compare(req.body.inputPassword, hashPassword, function(err, auth) {
-		console.log(hashPassword);
-		console.log(req.body.inputPassword);
 		if (auth && req.body.inputLogin === 'test' && req.body.ajax) {
 			fs.readFile('access.html', 'utf8', function(err, data) {
 				if (err) {
