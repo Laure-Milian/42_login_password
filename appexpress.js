@@ -7,6 +7,8 @@ var app = express();
 
 var port = process.env.PORT || 8080;
 
+app.set('view engine', 'ejs');
+
 var hashPassword = '$2a$10$o702CZOyvjHJIrCf5mXuceKJFiGx3PoeQ2kx5yQSI5o.tnFtBl4Pe';
 app.use(express.static('public'));
 
