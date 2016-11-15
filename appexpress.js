@@ -5,8 +5,6 @@ var bcrypt = require('bcrypt');
 
 var app = express();
 
-var port = process.env.PORT || 8080;
-
 var hashPassword = '$2a$10$o702CZOyvjHJIrCf5mXuceKJFiGx3PoeQ2kx5yQSI5o.tnFtBl4Pe';
 app.use(express.static('public'));
 
@@ -43,6 +41,4 @@ app.post('/checkuser', function(req, res) {
 })
 
 
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
-});
+app.listen(2000);
