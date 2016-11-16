@@ -27,15 +27,15 @@ app.post('/checkuser', function(req, res) {
 				res.send({err: false, message: data});
 			});
 		} 
-		//Pour form si probleme avec app.js
+/*		//Pour form si probleme avec app.js
 		else if (req.body.inputLogin === 'test' && req.body.inputPassword === 'test') {
 			res.redirect('/access.html');
 		}
-		// Fin special form
+		// Fin special form*/
 		else if (req.body.inputLogin === 'test') {
 			res.send({err: true, message:'Bad password'});
 		}
-		else if (req.body.inputPassword === 'test') {
+		else if (req.body.inputPassword === hashPassword) {
 			res.send({err: true, message:'Bad login'});
 		}
 		else {

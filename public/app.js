@@ -2,8 +2,6 @@
 
 var app = {
 
-	endpoint: 'http://localhost:2000',
-
 	init: function() {
 		this.listeners();
 	},
@@ -17,7 +15,7 @@ var app = {
 		var inputLogin = $('#inputLogin').val();
 		var inputPassword = $('#inputPassword').val();
 		$.post({
-			url: this.endpoint + '/checkuser',
+			url: '/checkuser',
 			method: 'POST',
 			data: {inputLogin: inputLogin, inputPassword: inputPassword, ajax: true}
 		})
