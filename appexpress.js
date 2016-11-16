@@ -35,7 +35,7 @@ app.post('/checkuser', function(req, res) {
 		else if (req.body.inputLogin === 'test') {
 			res.send({err: true, message:'Bad password'});
 		}
-		else if (req.body.inputPassword === hashPassword) {
+		else if (auth) {
 			res.send({err: true, message:'Bad login'});
 		}
 		else {
